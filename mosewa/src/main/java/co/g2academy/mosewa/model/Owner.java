@@ -23,8 +23,6 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(length = 100, nullable = false)
-    private String username;
-    @Column(length = 100, nullable = false)
     private String email;
     @Column(length = 100, nullable = false)
     private String password;
@@ -47,14 +45,6 @@ public class Owner {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmail() {

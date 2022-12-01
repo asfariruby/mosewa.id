@@ -37,7 +37,6 @@ public class Payment implements Serializable {
     private Integer totalCost;
     @Column(length = 10, nullable = false)
     private String paymentMethod;
-    @OneToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer Customer;
     @ManyToOne
