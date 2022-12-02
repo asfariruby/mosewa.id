@@ -35,14 +35,13 @@ public class Reservation implements Serializable {
     private String rentalAddress;
     @Column(nullable = false)
     private Boolean additionalDriver;
+    @Column(nullable = false)
+    private Boolean availability;
     @Column(length = 10, nullable = false)
     private String reservationStatus;
-    @OneToOne
-    @JoinColumn(name = "customer_id", nullable = false)
-    private Customer Customer;
-    @ManyToOne
-    @JoinColumn(name = "owner_id", nullable = false)
-    private Owner owner;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    
 
     public Integer getId() {
         return id;
@@ -92,20 +91,21 @@ public class Reservation implements Serializable {
         this.reservationStatus = reservationStatus;
     }
 
-    public Customer getCustomer() {
-        return Customer;
+    public Boolean getAvailability() {
+        return availability;
     }
 
-    public void setCustomer(Customer Customer) {
-        this.Customer = Customer;
+    public void setAvailability(Boolean availability) {
+        this.availability = availability;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public User getUser() {
+        return user;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public void setUser(User user) {
+        this.user = user;
     }
 
+    
 }

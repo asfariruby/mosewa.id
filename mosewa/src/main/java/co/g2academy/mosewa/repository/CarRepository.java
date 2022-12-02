@@ -4,7 +4,7 @@
  */
 package co.g2academy.mosewa.repository;
 
-import co.g2academy.mosewa.model.Vehicle;
+import co.g2academy.mosewa.model.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author user
  */
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle, Integer>{
-    public Vehicle findVehicleByVin(Integer vin);
+public interface CarRepository extends JpaRepository<Car, Integer>{
+    public Car findVehicleByVin(Integer vin);
 }

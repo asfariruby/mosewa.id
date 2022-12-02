@@ -19,12 +19,14 @@ import javax.persistence.Table;
  * @author user
  */
 @Entity
-@Table(name = "t_vehicle")
-public class Vehicle implements Serializable {
+@Table(name = "t_car")
+public class Car implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer vin;
+    private Integer id;
+    @Column(length = 10, nullable = false)
+    private Integer licensePlate;
     @Column(length = 20, nullable = false)
     private String type;
     @Column(length = 20, nullable = false)
@@ -36,21 +38,23 @@ public class Vehicle implements Serializable {
     @Column(nullable = false)
     private Integer capacity;
     @Column(nullable = false)
-    private Boolean availability;
-    @Column(nullable = false)
     private Integer ownershipCertificateNumber;
     @Column(nullable = false)
     private Integer costPerDay;
+    @Column(nullable = false)
+    private Integer carLongitude;
+    @Column(nullable = false)
+    private Integer carLatitude;
     @ManyToOne
-    @JoinColumn(name = "id_owner", nullable = false)
-    private Owner owner;
+    @JoinColumn(name = "id_user", nullable = false)
+    private User user;
 
-    public Integer getVehicleIdentificationNumber() {
-        return vin;
+    public Integer getId() {
+        return id;
     }
 
-    public void setVehicleIdentificationNumber(Integer vehicleIdentificationNumber) {
-        this.vin = vehicleIdentificationNumber;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -93,14 +97,6 @@ public class Vehicle implements Serializable {
         this.capacity = capacity;
     }
 
-    public Boolean getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(Boolean availability) {
-        this.availability = availability;
-    }
-
     public Integer getOwnershipCertificateNumber() {
         return ownershipCertificateNumber;
     }
@@ -117,13 +113,36 @@ public class Vehicle implements Serializable {
         this.costPerDay = costPerDay;
     }
 
-    public Owner getOwner() {
-        return owner;
+    public Integer getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setOwner(Owner owner) {
-        this.owner = owner;
+    public void setLicensePlate(Integer licensePlate) {
+        this.licensePlate = licensePlate;
     }
-    
-    
+
+    public Integer getCarLongitude() {
+        return carLongitude;
+    }
+
+    public void setCarLongitude(Integer carLongitude) {
+        this.carLongitude = carLongitude;
+    }
+
+    public Integer getCarLatitude() {
+        return carLatitude;
+    }
+
+    public void setCarLatitude(Integer carLatitude) {
+        this.carLatitude = carLatitude;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

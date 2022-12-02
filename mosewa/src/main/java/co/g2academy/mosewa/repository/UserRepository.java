@@ -5,6 +5,7 @@
 package co.g2academy.mosewa.repository;
 
 import co.g2academy.mosewa.model.Customer;
+import co.g2academy.mosewa.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author user
  */
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Integer>{
-    public Customer findCustomerByUsername(String username);
+public interface UserRepository extends JpaRepository<Customer, Integer>{
+    public User findUserByUsername(String username);
 }

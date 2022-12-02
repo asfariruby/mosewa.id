@@ -4,7 +4,7 @@
  */
 package co.g2academy.mosewa.security.service;
 
-import co.g2academy.tokomurah.repository.UserRepository;
+import co.g2academy.mosewa.repository.UserRepository;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
