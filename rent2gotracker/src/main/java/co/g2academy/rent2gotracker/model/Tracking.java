@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.g2academy.mosewa.model;
+package co.g2academy.rent2gotracker.model;
 
 import java.io.Serializable;
 import java.sql.Time;
@@ -30,10 +30,6 @@ public class Tracking implements Serializable{
     private Double latitude;
     @Column(nullable = false)
     private Time timestamp;
-    @JoinColumn(name = "reservation_id", nullable = false)
-    private Reservation reservation;
-    @JoinColumn(name = "car_license_plate", nullable = false)
-    private Car car;
 
     public Integer getId() {
         return id;
@@ -67,19 +63,4 @@ public class Tracking implements Serializable{
         this.timestamp = timestamp;
     }
 
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
 }

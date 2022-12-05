@@ -2,10 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.g2academy.mosewa.repository;
+package co.g2academy.rent2go.repository;
 
-import co.g2academy.mosewa.model.Reservation;
-import co.g2academy.mosewa.model.User;
+import co.g2academy.rent2go.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author user
  */
 @Repository
-public interface ReservationRepository extends JpaRepository<Reservation, Integer>{
-    public Reservation findReservationById(Integer id);
-    public Reservation findReservationByEmail(User user, String email);
+public interface UserRepository extends JpaRepository<User, Integer>{
+    public User findUserByEmail(String email);
 }
